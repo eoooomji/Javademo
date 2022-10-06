@@ -1,4 +1,4 @@
-package java1005_basic;
+package java001_basic;
 
 /*
  * 연산자(operator) : 어떠한 기능을 수행하는 기호(+, -, *, /, %, >, <, >=, <=, ==, != ...)

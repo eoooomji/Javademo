@@ -1,4 +1,4 @@
-package java1005_basic;
+package java001_basic;
 
 // 키워드는 보라색, 식별자는 검은색
 /*

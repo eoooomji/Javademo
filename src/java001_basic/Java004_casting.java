@@ -1,4 +1,4 @@
-package java1005_basic;
+package java001_basic;
 /*
  * 윈도우 + shift + s : 캡쳐
  * Ctrl + F11 : 출력
