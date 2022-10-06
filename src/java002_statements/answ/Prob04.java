@@ -1,4 +1,4 @@
-package java002_statements.prob;
+package java002_statements.answ;
 
 /* 
 [문제] 중첩if를 이용하여 프로그램을 작성하시오
@@ -31,9 +31,9 @@ import java.io.*;
 class Prob04 {
 	public static void main(String[] args) throws IOException {
 
-		int kor = 99;
-		int eng = 80;
-		int mat = 90;
+		int kor = 35;
+		int eng = 40;
+		int mat = 22;
 		int tot = 0;
 		double avg;
 
@@ -45,26 +45,16 @@ class Prob04 {
 		avg = tot / 3.0;
 
 		// 여기에 구현하시오.
-		if(avg > 60) {
-			if(avg>=90) {
-				System.out.printf("평균점수: %f. 합격입니다. 장학금 신청이 가능합니다.", avg);
-			}else if(avg>=80) {
-				System.out.printf("평균점수: %f. 합격입니다.", avg);
+
+		if (avg >= 60.0) {
+			if (!(kor >= 40 && eng >= 40 && mat >= 40)) {
+				System.out.println("과락으로 불합격");
+			} else {
+				System.out.println("합격");
 			}
-		}else {
-			System.out.printf("평균점수: %f. 낙제입니다.", avg);
+		} else {
+			System.out.println("불합격");
 		}
-		
-		// 답
-//		if (avg >= 60.0) {
-//			if (!(kor >= 40 && eng >= 40 && mat >= 40)) {
-//				System.out.println("과락으로 불합격");
-//			} else {
-//				System.out.println("합격");
-//			}
-//		} else {
-//			System.out.println("불합격");
-//		}
-//		
+
 	}// end main()
 }// end class

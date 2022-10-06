@@ -17,16 +17,70 @@ package java002_statements.prob;
 public class Prob01 {
 
 	public static void main(String[] args) {
-		int year=2012;	
-		String animal="";
+		int year = 1996;
+		String animal = "";
 
-		//여기에서 구현하세요////////////////////////////////
+		// 여기에서 구현하세요////////////////////////////////
+		switch (year % 12) {
+		case 0:
+			animal = "원숭이";
+			break;
+		case 1:
+			animal = "닭";
+			break;
+		case 2:
+			animal = "개";
+			break;
+		case 3:
+			animal = "돼지";
+			break;
+		case 4:
+			animal = "쥐";
+			break;
+		case 5:
+			animal = "소";
+			break;
+		case 6:
+			animal = "호랑이";
+			break;
+		case 7:
+			animal = "토끼";
+			break;
+		case 8:
+			animal = "용";
+			break;
+		case 9:
+			animal = "뱀";
+			break;
+		case 10:
+			animal = "말";
+			break;
+		case 11:
+			animal = "양";
+		}
 		
-		
+		// 답
+//		int res = year%12;
+//		//switch(year%12){
+//		switch(res){
+//		case 0: animal="원숭이"; break;
+//		case 1: animal="닭"; break;
+//		case 2: animal="개"; break;
+//		case 3: animal="돼지"; break;
+//		case 4: animal="쥐"; break;
+//		case 5: animal="소"; break;
+//		case 6: animal="호랑이"; break;
+//		case 7: animal="토끼"; break;
+//		case 8: animal="용"; break;
+//		case 9: animal="뱀"; break;
+//		case 10: animal="말"; break;
+//		case 11: animal="양";
+//		}
+
 		///////////////////////////////////////////////
-		
-		System.out.println(year+"년도의 태생은 "+animal+"띠입니다.");
 
-	}//end main()
+		System.out.println(year + "년도의 태생은 " + animal + "띠입니다.");
 
-}//end class
+	}// end main()
+
+}// end class

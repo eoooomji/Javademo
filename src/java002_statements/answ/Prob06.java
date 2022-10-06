@@ -1,4 +1,4 @@
-package java002_statements.prob;
+package java002_statements.answ;
 
 /*
  * 직급에 따른 수령 월급
@@ -23,11 +23,12 @@ package java002_statements.prob;
 public class Prob06 {
 
 	public static void main(String[] args) {
-		String grade = "과장"; // 직급
-		int overtime = 5; // 총 초과근무시간
+		String grade = "대리"; // 직급
+		int overtime = 13; // 총 초과근무시간
 		int money = 0; // 수령 월급
 
 		/////////// 여기에서 구현하세요. /////////
+
 		switch (grade) {
 		case "과장":
 			money = 250;
@@ -37,35 +38,15 @@ public class Prob06 {
 			break;
 		case "사원":
 			money = 150;
-			break;
-
 		}
-		if(overtime>=20) {
+		
+		
+		if (overtime >= 20) {
 			money += 20;
-		}else if(overtime >=10 && overtime <20) {
+		} else if (overtime < 10) {
+		} else {
 			money += 10;
 		}
-		
-		// 답
-		
-//		switch (grade) {
-//		case "과장":
-//			money = 250;
-//			break;
-//		case "대리":
-//			money = 200;
-//			break;
-//		case "사원":
-//			money = 150;
-//		}
-//		
-//		
-//		if (overtime >= 20) {
-//			money += 20;
-//		} else if (overtime < 10) {
-//		} else {
-//			money += 10;
-//		}
 
 		//////////////////////////////////////
 
