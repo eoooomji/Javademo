@@ -1,4 +1,4 @@
-package java003_statements_prob;
+package java003_statements.answ;
 
 /*
 for문을 이용해서 12의 약수를 구하시오
@@ -14,12 +14,26 @@ for문을 이용해서 12의 약수를 구하시오
 public class Prob_01 {
 
 	public static void main(String[] args) {
-		int a = 12;
-		for (int i = 1; i <= a; i++) {
-			if (a % i == 0) {
+		int num=12;
+		for(int i=1;i<=num;i++){
+			if(num%i==0){
 				System.out.println(i);
-			}
-		}
-	}// end main()
+				}
+		}		
 
-}// end class
+	}//end main()
+
+}//end class
+
+
+
+
+
+
+
+
+
+
+
+
+

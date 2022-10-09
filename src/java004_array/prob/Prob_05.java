@@ -1,4 +1,5 @@
 package java004_array.prob;
+
 /*
  * 학생들의 답안을 채점하는 프로그램을 작성하시오.
  * 다음과 같은 2차원 배열이 학생들의 제출한 답이다.
@@ -25,7 +26,19 @@ package java004_array.prob;
 public class Prob_05 {
 
 	public static void main(String[] args) {
-		
-	}//end main()
+		String[] name = { "소원", "예린", "은하", "우주", "신비" };
+		int[][] answer = { { 1, 3, 2, 4, 3, 1, 4, 2, 2, 1 }, { 3, 2, 4, 2, 2, 1, 1, 3, 4, 1 },
+				{ 2, 4, 3, 2, 1, 2, 1, 3, 3, 4, }, { 2, 3, 3, 1, 1, 3, 2, 2, 4, 4 }, { 3, 1, 1, 2, 4, 1, 2, 3, 1, 3 } };
+		int[] dab = { 1, 2, 3, 4, 4, 3, 2, 1, 1, 2 };
 
-}//end class
+		for (int i = 0; i < 5; i++) {
+			int score = 0;
+			for (int j = 0; j < answer[i].length; j++) {
+				if (answer[i][j] == dab[j])
+					score++;
+			}System.out.printf("%s 점수 : %d점 \n ", name[i], score);
+		}
+
+	}// end main()
+
+}// end class

@@ -1,6 +1,6 @@
-package java003_statements_prob;
+package java003_statements.answ;
 
-/*  
+/*
  * 1 10=2x+3y의 해를 구하시오.
  *   x와y의 범위 : 0<=x<=10,  0<=y<=10
  *   
@@ -11,13 +11,15 @@ package java003_statements_prob;
 public class Prob_04 {
 
 	public static void main(String[] args) {
-		int x;
-		int y;
-		for (x = 0; x <= 10; x++) {
-			for (y = 0; y <= 10; y++) {
-				if (10 == 2 * x + 3 * y) {
-					System.out.printf("x=%d, y=%d \n", x, y);
+		int sum = 0;
+		for (int i = 0; i <= 10; i++) {
+			for (int j = 0; j <= 10; j++) {
+				sum = 2 * i + 3 * j;
+				if (sum == 10) {
+			  //if (2*i+3*j==10){
+					System.out.printf("x=%d, y=%d\n", i, j);
 				}
+
 			}
 		}
 
