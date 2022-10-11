@@ -10,14 +10,14 @@ public class Prob_01 {
 	public static void main(String[] args) {
 
 		int[] num = { 94, 85, 95, 88, 90 };
-		//여기를 구현하세요.
+		// 여기를 구현하세요.
 		int max = num[0];
-		for(int i = 0 ; i < num.length ; i++) {
-			if(max < num[i]) {
+		for (int i = 0; i < num.length; i++) {
+			if (max > num[i]) {
 				max = num[i];
 			}
-		}System.out.println("최대값: "+ max);
-
+		}
+		System.out.printf("최대값:%d \n", max);
 	}// end main()
 
 }// end class
