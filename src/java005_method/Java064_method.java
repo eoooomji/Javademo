@@ -1,8 +1,5 @@
 package java005_method;
 
-/*
- * 
- */
 public class Java064_method {
 
 	public static void main(String[] args) {
