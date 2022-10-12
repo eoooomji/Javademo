@@ -11,7 +11,15 @@ public class Prob01_class {
 
 	public static void main(String[] args) {
 		//여기를 구현하세요.////////////////////	
-
+		Prob01 pizza = new Prob01();
+		pizza.x = 10;
+		pizza.name = "피자";
+		pizza.display();
+		
+		Prob01 donut = new Prob01();
+		donut.x = 2;
+		donut.name = "도넛";
+		donut.display();
 	}//end main()
 
 }//end class

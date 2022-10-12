@@ -8,36 +8,14 @@ package java006_class.prob;
  * 생성자 호출됨
  * Bible 작자미상
  */
-class Book2 {
-	String title;
-	String author;
-	void show() { System.out.println(title + " " + author); }
-	
-	public Book2() {
-		this("", "");
-		System.out.println("생성자 호출됨");
-	}
-
-	public Book2(String title) {
-		this(title, "작자미상");
-	}
-	
-	public Book2(String title, String author) {
-		this.title = title;
-		this.author = author;
-	}
-	
-}
-
-
 public class Prob02_class {
 
 	public static void main(String[] args) {
-		Book2 javaBook = new Book2("Java", "황기태");
-		Book2 bible = new Book2("Bible");
-		Book2 emptyBook = new Book2();
+		Prob02 javaBook = new Prob02("Java", "황기태");
+		Prob02 bible = new Prob02("Bible");
+		Prob02 emptyBook = new Prob02();
 		/////////여기에 구현하세요.
-		
+		bible.display();
 		/////////////////////////////////////
 
 	}//end main( )
