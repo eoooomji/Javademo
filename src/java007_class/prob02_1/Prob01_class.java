@@ -21,8 +21,10 @@ public class Prob01_class {
 		me[2] = new MovieShop("소수의견", 7000, 2);
 
 		// 여기에 구현하세요/////////////////
+		
 		for(int i = 0 ; i < me.length ; i++) {
 			sum += me[i].countMoney();
+			me[i].prn();
 		}
 		System.out.printf("총 합계 : %d", sum);
 		

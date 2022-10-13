@@ -33,10 +33,11 @@ public class Prob02_class {
 
 	public static void display(SalesGrade[] sg) {
 		// 연봉등급표를 출력하는 로직구현
-//		for (int i = 0; i < sg.length; i++) {
-//			System.out.println(sg[i]);
-//		}
-		sg.toString();
+		for (int i = 0; i < sg.length; i++) {
+			System.out.println(sg[i].toString());
+		}
+		
+		
 
 	}// end display()
 

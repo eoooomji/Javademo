@@ -21,7 +21,7 @@ public class Pitcher {
 	
 	public String toString() {
 		// 이름 투구이닝 자책점 방어율 순으로 출력할 메소드 구현하시오.
-		return null;
+		return name + ini +  run + era;
 	}// end toString()
 
 	
