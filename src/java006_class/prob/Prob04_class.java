@@ -20,6 +20,8 @@ class Office {
 
 	// 프로그램을 컴파일할때 정상적으로 수행이 되도록 생성자를 정의하시오.
 	public Office(int num, int jumsu) {
+		this.num = num;
+		this.jumsu = jumsu;
 		
 	}
 

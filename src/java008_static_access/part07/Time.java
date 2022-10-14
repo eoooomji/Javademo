@@ -7,7 +7,7 @@ package java008_static_access.part07;
  * 
  * 캡슐화 정의 방법
  * 1. 멤버변수의 접근제어자는 private으로 선언한다.
- * 2. setter메서드의 정의 방법
+ * 2. setter메서드의 정의 방법(저장)
  *    - 접근제어자 public으로 지정한다.
  *    - 리턴 타입은 void로 지정한다.
  *    - 메소드명은 set으로 시작하고, 멤버변수의 첫글자만 재문자로 지정하고 나머지는 같게 한다.
@@ -15,7 +15,7 @@ package java008_static_access.part07;
  *      public void setNum(int num){
  *        this.num = num; (매개변수 값을 멤버변수에 할당)
  *      }
- * 3. getter메서드의 정의 방법
+ * 3. getter메서드의 정의 방법(가져오기)
  *    - 접근제어자 public으로 지정한다.
  *    - 리턴 타입은 멤버변수의 데이터 타입과 같게 한다.
  *    - 메소드명은 get으로 시작하고, 멤버변수의 첫글자만 대문자로 지정하고 나머지는 같게 한다.
