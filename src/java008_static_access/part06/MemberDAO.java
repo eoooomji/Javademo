@@ -3,7 +3,7 @@ package java008_static_access.part06;
 public class MemberDAO {
 	private static MemberDAO dao = new MemberDAO();
 	
-	public MemberDAO() {
+	private MemberDAO() {
 		
 	}
 	
