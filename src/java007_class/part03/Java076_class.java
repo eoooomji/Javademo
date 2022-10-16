@@ -17,7 +17,7 @@ public class Java076_class {
 			if (checkOperator(ope[i])) {
 				return;
 			}
-			;
+			
 			nfo[i] = new Calc(left[i], right[i], ope[i]);
 		}
 

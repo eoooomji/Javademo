@@ -7,15 +7,20 @@ public class HealthRate extends Health {
 	}
 
 	private double standardHealth() {
-		// 표준체중 로직구현을 구현하세요.
-
-		return 0.0;
+		// 표준체중 로직구현을 구현하세요.;
+		return (height - 100) * 0.9;
 	}
 
 	private String rateCheck() {
 		// 비만도를 로직구현을 구현하세요
+		double res = (weight - standardHealth()) / standardHealth() * 100;
+		if (res >= 20)
+			return "비만";
+		else if (res >= 10 && res < 20)
+			return "과체중";
+		else
+			return "정상";
 
-		return null;
 	}
 
 	// prn()메소드 오버라이딩

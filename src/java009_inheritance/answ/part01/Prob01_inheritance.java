@@ -1,4 +1,4 @@
-package java009_inheritance.prob.part01;
+package java009_inheritance.answ.part01;
 
 /*
  [주의]테스트를 할때 main( )메소드의 주석을 해제하세요.
@@ -28,12 +28,12 @@ package java009_inheritance.prob.part01;
 public class Prob01_inheritance {
 
 	public static void main(String[] args) {
-		//테스트를 할때는 아래 주석을 해제하세요.
-		
-		ClassTest_2 ct=new ClassTest_2("이지나",3000,"교육부");
+		// 테스트를 할때는 아래 주석을 해제하세요.
+
+		ClassTest_2 ct = new ClassTest_2("이지나", 3000, "교육부");
 		ct.callSuperThis();
-		ct.getInformation();	
-			
+		ct.getInformation();
+
 	}// end main()
 
 }// end class
