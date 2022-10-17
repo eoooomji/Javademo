@@ -9,7 +9,7 @@ public class FinalTest {
 	}
 	
 	void display() {
-		System.out.println("display");
+//		System.out.println("display");
 	}
 	
 	final void process() {
