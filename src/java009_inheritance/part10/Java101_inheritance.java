@@ -1,5 +1,9 @@
 package java009_inheritance.part10;
 
+import java.lang.System;
+import java.lang.String;
+// java.lang에서 자동으로 클래스를 가져온다.
+
 public class Java101_inheritance {
 	public static void main(String[] args) {
 		BasicTv btv = new BasicTv();

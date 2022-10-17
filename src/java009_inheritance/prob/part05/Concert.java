@@ -17,6 +17,7 @@ public class Concert extends Artist {
 		return String.format("%-10s %-10s %-10s %-10s %d ",artist, enter, concert, seat, price);
 	}
 	
+	@Override
 	public void prn() {
 		System.out.printf("%s %s %s좌석의 가격은 %d원입니다. \n",artist, concert, seat, price);
 	}
