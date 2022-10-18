@@ -27,7 +27,7 @@ public class Java117_String {
 		System.out.printf("%d + %d = %d \n", x, y, x + y);
 
 		// String <- int
-		// String.valuOf는 기본데이터 타입을 전부 Stirng으로 호출이 가능하다.
+		// String.valueOf는 기본데이터 타입을 전부 Stirng으로 호출이 가능하다.
 		String s1 = String.valueOf(x);
 		String s2 = String.valueOf(y);
 		System.out.printf("%s + %s = %s \n", s1, s2, s1 + s2);
