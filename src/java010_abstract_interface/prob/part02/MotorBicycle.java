@@ -5,13 +5,11 @@ public class MotorBicycle implements IBicycle, IMotor {
 	int id;
 	String brand;
 
-	public MotorBicycle() {
-
-	}
-
 	// IBicycle에 있는 추상 메소드를 구현하세요
 	public void prtInfo() {
 		// 여기
+		System.out.println("ID : " + id);
+		System.out.println("Brand : " + brand);
 		System.out.println("Frame Size : " + FrameSize_M);
 		System.out.println("Motor Size : " + Motor_Size_Large);
 	}
@@ -19,13 +17,13 @@ public class MotorBicycle implements IBicycle, IMotor {
 	// IMotor에 있는 추상 메소드를 구현하세요
 	public void start() {
 		// 여기
-		System.out.println("모터 start!!");
+		System.out.println("## 모터 start!!");
 	}
 
 	// IMotor에 있는 추상 메소드를 구현하세요
 	public void stop() {
 		// 여기
-		System.out.println("모터 stop!!");
+		System.out.println("## 모터 stop!!");
 	}
 
 }

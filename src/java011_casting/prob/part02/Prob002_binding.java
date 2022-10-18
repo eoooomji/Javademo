@@ -18,6 +18,19 @@ public class Prob002_binding {
 
 		System.out.println("이름          급여      정규보너스    특별보너스");
 		System.out.println("=============================================");
+		for (Employee ob : em) {
+			if (ob instanceof Engineer)
+				System.out.println(ob.toString() + "\t" + (int) (ob.salary * 0.13));
+			else if (ob instanceof Developer)
+				System.out.println(ob.toString() + "\t" + (int) (ob.salary * 0.15));
+		}
+		
+		System.out.println("=============================================");
+		
+		System.out.println(em[0].toString() + "   " + (int) (em[0].salary * 0.13));
+		System.out.println(em[1].toString() + "   " + (int) (em[1].salary * 0.15));
+		System.out.println(em[2].toString() + "   " + (int) (em[2].salary * 0.13));
+		System.out.println(em[3].toString() + "   " + (int) (em[3].salary * 0.15));
 
 		//////////////////////////////////////
 

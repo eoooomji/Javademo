@@ -12,13 +12,19 @@ package java011_casting.prob.part03;
  * 위의 [데이타]를 참조하여 [출력결과]가 나오도록 프로그램을 구현하세요.
  */
 
-
-
 public class Prob003_binding {
 
 	public static void main(String[] args) {
+		Regular rman = new Regular("홍길동", "영업부", "정직원", 450000, 1000);
+		display(rman);
+		Worker wman = new Worker("갑동이", "기획부", "계약직", 20, 10000);
+		display(wman);
 		
 
-	}//end main()
+	}// end main()
 
-}//end class
+	public static void display(Employment emp) {
+		System.out.printf("%s 총급여: %d \n", emp.getName(), emp.count());
+	}
+
+}// end class
