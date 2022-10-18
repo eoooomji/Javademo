@@ -7,7 +7,7 @@ public class Java117_String {
 		System.out.println("문자열 길이 : " + str.length());
 		System.out.println("대문자 : " + str.toUpperCase());
 		System.out.println("소문자 : " + str.toLowerCase());
-		System.out.println("문자 : " + str.charAt(5));
+		System.out.println("문자 : " + str.charAt(0));
 		System.out.println("인덱스 : " + str.indexOf('a')); // 4
 		System.out.println("인덱스 : " + str.indexOf(97)); // 4
 		System.out.println("인덱스 : " + str.lastIndexOf('a')); // 13 뒤에서 부터 값을 찾기
