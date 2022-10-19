@@ -1,6 +1,4 @@
-﻿package java013_api.prob;
-
-
+﻿package java013_api.answ;
 
 /*
  * [출력결과]
@@ -19,16 +17,17 @@ public class Prob001_String {
 
 	private static Product createProduct(String message) {
 		//매개변수로 들어온 문자열을 적절히 이용하여 
-		//Product 객체를 생성후 리턴하는createProduct() 메서드를 구현하시오.
-        String[] mg = message.split("\\*{2}");
-        Product pt = new Product();
-        pt.setProductId(mg[0]);
-        pt.setMaker(mg[1]);
-        pt.setName(mg[2]);
-        pt.setAmount(Integer.parseInt(mg[3]));
-        pt.setPrice(Integer.parseInt(mg[4]));
-        
-		return pt;
+		//Product 객체를 생성후 리턴하는createProduct() 메서드를 구현하시오. 
+            
+		 String[] data=message.split("\\*{2}");
+         
+         Product pt=new Product();
+         pt.setProductId(data[0]);
+         pt.setMaker(data[1]);
+         pt.setName(data[2]);
+         pt.setAmount(Integer.parseInt(data[3]));
+         pt.setPrice(Integer.parseInt(data[4]));
+         return pt;
 	}// end creatProduct
 }// end class
 

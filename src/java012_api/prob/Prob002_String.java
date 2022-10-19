@@ -19,8 +19,12 @@ public class Prob002_String {
 
 	public static char[] reverse(String str) {
 		//여기를 구현하세요.
-		
-		return null;
+		char[] arr = new char[str.length()];
+		for(int i = 0 ; i < str.length() ; i++) {
+			arr[i] = str.charAt(str.length()-1-i);
+		}
+
+		return arr ;
 	}//end reverse()
 
 	public static void printCharArray(char[] array) {
