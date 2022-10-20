@@ -31,7 +31,6 @@ public class Prob002_random {
 	private static int[] makeArray() {
 		// 난수값를 발생시킨후 반환하는 프로그램을 구현하시오.
 		
-		
 		return null;
 	}// end makeArray()
 
