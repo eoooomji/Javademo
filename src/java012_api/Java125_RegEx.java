@@ -49,7 +49,7 @@ public class Java125_RegEx {
 		// sn변수에 숫자 0-9가 포함되어 있지 않으면 true or false를 리턴
 		System.out.println(sn.matches(".*[^0-9].*"));
 		System.out.println(sn.matches(".*[\\D].*"));
-		// ^ : 시작할 때 값 앞에 붙여주면 부정의 의미를 가짐
+		// ^ : 문자열의 시작. [^] : 대괄호 안에 있으면 부정의 의미를 지님
 		// \D : 부정의 의미
 
 		// sb변수에 저장된 값이 2로 시작되면 true or false를 리턴
