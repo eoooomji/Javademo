@@ -14,28 +14,26 @@ package java014_api.prob;
 public class Prob005_String {
 
 	public static void main(String[] args) {
-		String done="콜라:1000:3";
-		String[] arr1=tokenData(done);
-		Drink d1=process(arr1);
+		String done = "콜라:1000:3";
+		String[] arr1 = tokenData(done);
+		Drink d1 = process(arr1);
 		d1.display();
-		
-		String dtwo="사이다:1200:2";
-		String[] arr2=tokenData(dtwo);
-		Drink d2=process(arr2);
+
+		String dtwo = "사이다:1200:2";
+		String[] arr2 = tokenData(dtwo);
+		Drink d2 = process(arr2);
 		d2.display();
 
-	}//end main()
-	
-	public static String[] tokenData(String data){
-		
-		return null;
-	}
-	
-	public static Drink process(String[] data){
-		
-		return null;
-	}
-	
-	
+	}// end main()
 
-}//end class
+	public static String[] tokenData(String data) {
+
+		return data.split(":");
+	}
+
+	public static Drink process(String[] data) {
+		Drink dn = new Drink(data[0], Integer.parseInt(data[1]), Integer.parseInt(data[2]));
+		return dn;
+	}
+
+}// end class
