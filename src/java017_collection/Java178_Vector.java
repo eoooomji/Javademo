@@ -7,6 +7,8 @@ public class Java178_Vector {
 	public static void main(String[] args) {
 		Vector v = new Vector();
 		// Integer -> Object : up-casting
+		// Vector에 들어가는 값은 요소(element)이다.
+		// 컬렉션에 들어가는 모든 요소들은 Object로 리턴된다.
 		v.add(new Integer(10)); // deprecated
 		v.add(new Integer(20));
 
