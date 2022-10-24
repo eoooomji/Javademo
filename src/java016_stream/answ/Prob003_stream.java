@@ -1,4 +1,4 @@
-package java016_stream.prob;
+package java016_stream.answ;
 
 
 import java.io.FileNotFoundException;
@@ -28,12 +28,38 @@ import java.io.LineNumberReader;
 public class Prob003_stream {
 	public static void main(String[] args) throws Exception {
 
-		search(".\\src\\java016_stream\\prob\\input.txt", "You");
+		search(".\\src\\java016_stream\\answ\\input.txt", "You");
 	}// end main()
 
 	private static void search(String inputFile, String searchWord) {
-		//여기를 구현하세요.
-		
+		FileReader fr=null;
+		LineNumberReader re=null;
+		try {
+			 fr = new FileReader(inputFile);
+			 re = new LineNumberReader(fr);
+			String line="";
+         
+			while ((line=re.readLine()) != null) {
+				//if(line.toUpperCase().matches(".*"+searchWord.toUpperCase()+".*"))
+				if(line.toLowerCase().contains(searchWord.toLowerCase()))
+				System.out.printf("%d : %s\n",re.getLineNumber(),line);
+			}
+			
+			
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally{
+			try {
+				re.close();
+				fr.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
 
 	}// end search()
 }// end class

@@ -21,7 +21,7 @@ public class Java137_Math {
 				}
 			}
 		}
-		
+
 		Arrays.sort(num);
 		for (int data : num)
 			System.out.println(data);

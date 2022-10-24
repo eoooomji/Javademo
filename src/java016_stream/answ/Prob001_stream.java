@@ -1,4 +1,4 @@
-package java016_stream.prob;
+package java016_stream.answ;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,7 +20,27 @@ public class Prob001_stream {
 	
 	public static void main(String[] args) {
 	     //각 학생의 총점을 출력하는 프로그램을 구현하시오.
-		File file=new File("./src/java016_stream/prob/score.txt");
+		
+		File file=new File("./src/java016_stream/answ/score.txt");
+		try {
+			Scanner sc=new Scanner(file);
+			
+			while(sc.hasNext()){
+				String line=sc.nextLine();
+							
+				// : 또는 /로 문자열을 구분한다.
+				String data[]=line.split("[:/]");
+				int sum=0;
+				for(int i=1;i<data.length;i++)
+					sum+=Integer.parseInt(data[i]);
+				System.out.printf("%s의 점수 통합 :%d\n",data[0],sum);
+			}
+			
+			
+		} catch (FileNotFoundException e) {			
+			e.printStackTrace();
+		}
+		
 		
 	}//end main()
 

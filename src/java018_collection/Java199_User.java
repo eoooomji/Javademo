@@ -64,7 +64,6 @@ public class Java199_User {
 	public static void main(String[] args) {
 		FruitBox<Orange> fOrange = new FruitBox<Orange>();
 
-		// store() :
 		fOrange.store(new Orange());
 		openAndAllBox(fOrange);
 		openAndExtendsBox(fOrange);
