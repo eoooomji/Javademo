@@ -1,6 +1,6 @@
 package ncs.test09;
 
-abstract public class Plane {
+ public abstract class Plane {
 	private String planeName;
 	private int fuelSize;
 
@@ -13,11 +13,11 @@ abstract public class Plane {
 		this.fuelSize = fuelSize;
 	}
 
-	public void refuel(int fuel) {
-
+	public void refuel(int fuel) { // 주유
+		fuelSize += fuel;
 	}
 
-	abstract public void flight(int distance);
+	abstract public void flight(int distance); // 운항
 
 	public String getPlaneName() {
 		return planeName;
@@ -27,11 +27,11 @@ abstract public class Plane {
 		this.planeName = planeName;
 	}
 
-	public int getFuleSize() {
+	public int getFuelSize() {
 		return fuelSize;
 	}
 
-	public void setFuleSize(int fuelSize) {
+	public void setFuelSize(int fuelSize) {
 		this.fuelSize = fuelSize;
 	}
 
