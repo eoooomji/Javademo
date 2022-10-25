@@ -1,10 +1,11 @@
 package java016_stream.prob;
 
-
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.util.Scanner;
 
 /*
  * [문제] 
@@ -33,7 +34,21 @@ public class Prob003_stream {
 
 	private static void search(String inputFile, String searchWord) {
 		//여기를 구현하세요.
-		
+		try(Scanner sc = new Scanner(new File(inputFile))){
+			while(sc.hasNextLine()) {
+				String line = sc.nextLine();
+				for(int i=0;i<line.length();i++) {
+					if(line == "searchWord") {
+						
+					}
+					
+				}
+			}
+				
+			
+		}catch(FileNotFoundException ex) {
+			System.out.println(ex.toString());
+		}
 
 	}// end search()
 }// end class

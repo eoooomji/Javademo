@@ -10,30 +10,21 @@ import java.util.Scanner;
 public class Prob006_String {
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		
+		Scanner sc = new Scanner(System.in);
+
 		System.out.print("97에서 122까지정수 입력:");
-		int x=sc.nextInt();
-		
+		int x = sc.nextInt();
+
 		System.out.printf("%s\n", result(toChar(x)));
 	}
-	
-	public static char toChar(int x){
-		
-		return ' '; 
+
+	public static char toChar(int x) {
+
+		return (char) x;
 	}
-	
-	public  static String result(char data){
-	
-		return null;
-	}	
+
+	public static String result(char data) {
+
+		return String.valueOf(data);
+	}
 }
-
-
-
-
-
-
-
-
-

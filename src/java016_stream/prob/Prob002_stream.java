@@ -27,7 +27,24 @@ public class Prob002_stream {
 
 	private static void makeVariable(String fileName) {
 		// 구현하세요.
-	
+		try {
+			Scanner sc = new Scanner(new File(fileName));
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				for (int i = 0; i < line.length(); i++) {
+					if (line.charAt(i) == '_')
+						continue;
+					else if (i != 0 && line.charAt(i - 1) == '_')
+						System.out.printf("%c", line.charAt(i));
+					else
+						System.out.printf("%c", Character.toLowerCase(line.charAt(i)));
+				}
+				System.out.println();
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 
 	}// end makeVariable()
 }// end class

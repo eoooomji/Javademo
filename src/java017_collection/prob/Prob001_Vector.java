@@ -30,9 +30,9 @@ public class Prob001_Vector {
 		// booklist.txt 파일의 데이터를 Vector에 저장한 후 리턴하는 프로그램을 구현하시오.
 		Vector<Book> vt = new Vector<Book>();
 		Scanner sc = new Scanner(new File("./src/java017_collection/prob/booklist.txt"));
-		while (sc.hasNextLine()) {
-			String[] data = sc.nextLine().split("/");
-			Book book = new Book(data[0], data[1], data[2], data[3]);
+		while (sc.hasNextLine()) { // 더 이상 읽을게 없을 때까지 읽어오기 위해 while문 작성
+			String[] data = sc.nextLine().split("/"); // split사용 시 String배열로 리턴
+			Book book = new Book(data[0], data[1], data[2], data[3]); // Book 객체에 대입
 			vt.add(book);
 		}
 
