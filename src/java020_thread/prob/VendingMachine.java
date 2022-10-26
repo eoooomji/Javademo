@@ -9,7 +9,7 @@ public class VendingMachine {
 	public synchronized String getDirnk() {
 		while (store.isEmpty()) {
 			try {
-				this.wait();
+				wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -18,7 +18,7 @@ public class VendingMachine {
 	}
 
 	public synchronized void putDrink(String drink) {
-		this.notify();
+		notify();
 		store.push(drink);
 	}
 }

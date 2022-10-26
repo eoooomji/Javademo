@@ -3,14 +3,29 @@ package java020_thread.prob;
 public class Prob002_thread {
 
 	public static void main(String[] args) {
-		EnglishLowerThread t1=new EnglishLowerThread();
-		EnglishUpperThread t2=new EnglishUpperThread();
-		KoreanThread t3=new KoreanThread();
-		
-		t1.start();
-		t2.start();
-		t3.start();
+		EnglishLowerThread t1 = new EnglishLowerThread();
+		EnglishUpperThread t2 = new EnglishUpperThread();
+		KoreanThread t3 = new KoreanThread();
 
-	}//end main()
+		try {
+			t1.start();
+			t1.join();
+		} catch (InterruptedException e) {
+		}
+		System.out.println();
+		try {
+			t2.start();
+			t2.join();
+		} catch (InterruptedException e) {
+		}
+		System.out.println();
+		try {
+			t3.start();
+			t3.join();
+		} catch (InterruptedException e) {
+		}
+		System.out.println();
 
-}//end class
+	}// end main()
+
+}// end class

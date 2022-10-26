@@ -33,21 +33,29 @@ public class Prob003_stream {
 	}// end main()
 
 	private static void search(String inputFile, String searchWord) {
-		//여기를 구현하세요.
-		try(Scanner sc = new Scanner(new File(inputFile))){
-			while(sc.hasNextLine()) {
-				String line = sc.nextLine();
-				for(int i=0;i<line.length();i++) {
-					if(line == "searchWord") {
-						
-					}
-					
-				}
+		// 여기를 구현하세요.
+		FileReader fr = null;
+		LineNumberReader re = null;
+		try {
+			fr = new FileReader(inputFile);
+			re = new LineNumberReader(fr);
+			String line = "";
+
+			while ((line = re.readLine()) != null) {
+				if (line.toLowerCase().contains(searchWord.toLowerCase()))
+					System.out.printf("%d : %s\n", re.getLineNumber(), line);
 			}
-				
-			
-		}catch(FileNotFoundException ex) {
-			System.out.println(ex.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				fr.close();
+				re.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 
 	}// end search()
