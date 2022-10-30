@@ -1,5 +1,6 @@
 package ncs.test13;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Inventory {
@@ -9,20 +10,23 @@ public class Inventory {
 	private int putAmount; // 입고수량
 	private int getAmount; // 출고수량
 	private int inventoryAmount; // 재고수량
-	
+
 	public Inventory() {
-		
+
 	}
-	
+
 	public Inventory(String productName, Date putDate, int putAmount) {
 		this.productName = productName;
 		this.putDate = putDate;
 		this.putAmount = putAmount;
+		this.inventoryAmount = putAmount;
 	}
-	
-	@Override
+
 	public String toString() {
-		return super.toString();
+		SimpleDateFormat sd = new SimpleDateFormat("yyyy년 M월 dd일");
+		String rdate = getDate == null ? null : sd.format(getDate);
+		return String.format("%s, %s 입고, %d개, %s, %d개, 재고 %d개", productName, sd.format(putDate), putAmount, rdate,
+				getAmount, inventoryAmount);
 	}
 
 	public String getProductName() {
@@ -62,6 +66,23 @@ public class Inventory {
 	}
 
 	public void setGetAmount(int getAmount) {
+		try {
+		if(this.getInventoryAmount() < getAmount) {
+			throw new AmountNotEnough("현재 재고가 부족합니다. 재고수량 확인하시기 바랍니다.");
+		}
+		else {
+			this.getAmount = getAmount;
+			this.inventoryAmount -= getAmount;
+		}
+		}
+		catch(AmountNotEnough e) {
+			System.out.println("출고수량 부족시---------------------------");
+			System.out.println(e.getMessage());
+			
+			// 시스템 강제종료
+			System.exit(0);
+		}
+		
 		this.getAmount = getAmount;
 	}
 
@@ -72,8 +93,5 @@ public class Inventory {
 	public void setInventoryAmount(int inventoryAmount) {
 		this.inventoryAmount = inventoryAmount;
 	}
-	
-	
-	
-	
+
 }
