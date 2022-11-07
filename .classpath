@@ -8,6 +8,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="D:/bic_study/utill/mybatis-3.5.7/mybatis-3.5.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pc/Desktop/Ezen-class/util/mybatis-3.5.7/mybatis-3.5.7/mybatis-3.5.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

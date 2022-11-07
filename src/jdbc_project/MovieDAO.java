@@ -1,4 +1,4 @@
-package java023_jdbc.part03;
+package jdbc_project;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,18 +10,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MemDAO {
+public class MovieDAO {
 	private Connection conn;
 	private Statement stmt;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
-	private static MemDAO dao = new MemDAO();
+	private static MovieDAO dao = new MovieDAO();
 
-	private MemDAO() {
+	public MovieDAO() {
+
 	}
 
-	public static MemDAO getInstance() {
+	public static MovieDAO getInstance() {
 		return dao;
 	}
 
@@ -44,21 +45,26 @@ public class MemDAO {
 			conn.close();
 	} // end exit()
 
-	public List<MemDTO> listMethod() {
-		List<MemDTO> aList = new ArrayList<MemDTO>();
+	public List<MovieDTO> listMethod() {
+		List<MovieDTO> mList = new ArrayList<MovieDTO>();
 		try {
 			conn = init();
 			conn.setAutoCommit(false);
 			stmt = conn.createStatement();
-			String sql = "SELECT * FROM mem ORDER BY num";
+			String sql = "SELECT * FROM movie ORDER BY title";
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				MemDTO dto = new MemDTO();
-				dto.setNum(rs.getInt("num"));
-				dto.setName(rs.getString("name"));
-				dto.setAge(rs.getInt("age"));
-				dto.setLoc(rs.getString("loc"));
-				aList.add(dto);
+				MovieDTO dto = new MovieDTO();
+				dto.setTitle(rs.getString("title"));
+				dto.setProducer(rs.getString("producer"));
+				dto.setOpenning(rs.getString("openning"));
+				dto.setGenre(rs.getString("genre"));
+				dto.setReview(rs.getString("review"));
+				dto.setMetacritic(rs.getString("metacritic"));
+				dto.setRottentomato(rs.getString("rottentomato"));
+				dto.setNaver(rs.getString("naver"));
+				dto.setDaum(rs.getString("daum"));
+				mList.add(dto);
 			}
 			conn.commit();
 		} catch (ClassNotFoundException | SQLException e) {
@@ -76,26 +82,28 @@ public class MemDAO {
 				e.printStackTrace();
 			}
 		}
-		return aList;
+		return mList;
 	} // end listMethod()
 
-	public int insertMethod(MemDTO dto) {
+	public int insertMovieMethod(MovieDTO dto) {
 		int chk = -1;
 		try {
 			conn = init();
 			conn.setAutoCommit(false);
-			String sql = "INSERT INTO mem(num, name, age, loc) ";
-			sql += "VALUES(mem_num_seq.nextval, ?, ?, ?)";
+			String sql = "INSERT INTO movie(title, producer, openning, genre)";
+			sql += "VALUES(?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, dto.getName());
-			pstmt.setInt(2, dto.getAge());
-			pstmt.setString(3, dto.getLoc());
-			chk = pstmt.executeUpdate(); // INSERT, UPDATE, DELETE
+			pstmt.setString(1, dto.getTitle());
+			pstmt.setString(2, dto.getProducer());
+			pstmt.setString(3, dto.getOpenning());
+			pstmt.setString(4, dto.getGenre());
+			chk = pstmt.executeUpdate();
 			conn.commit();
 		} catch (ClassNotFoundException | SQLException e) {
 			try {
 				conn.rollback();
 			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			e.printStackTrace();
@@ -108,17 +116,16 @@ public class MemDAO {
 			}
 		}
 		return chk;
-	} // end insertMethod
+	} // end insertMovieMethod()
 
-	public int updateMethod(HashMap<String, Object> hmap) {
+	public int deleteMovieMethod(String title) {
 		int chk = -1;
 		try {
 			conn = init();
 			conn.setAutoCommit(false);
-			String sql = "UPDATE mem SET name = ? WHERE num = ?";
+			String sql = "DELETE FROM movie WHERE title = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, (String) hmap.get("name"));
-			pstmt.setInt(2, (Integer) (hmap.get("num")));
+			pstmt.setString(1, title);
 			chk = pstmt.executeUpdate();
 			conn.commit();
 		} catch (ClassNotFoundException | SQLException e) {
@@ -137,16 +144,22 @@ public class MemDAO {
 			}
 		}
 		return chk;
-	} // end updateMethod();
+	} // end deleteMovieMethod()
 
-	public int deletedMethod(int age) {
+	public int updateScoreMethod(HashMap<String, Object> hmap) {
 		int chk = -1;
 		try {
 			conn = init();
 			conn.setAutoCommit(false);
-			String sql = "DELETE FROM mem WHERE age = ?";
+			String sql = "UPDATE movie ";
+			sql += "SET metacritic = ?, rottentomato = ?,naver = ?,daum = ?";
+			sql += "WHERE title = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, age);
+			pstmt.setString(1, (String) hmap.get("metacritic"));
+			pstmt.setString(2, (String) hmap.get("rottentomato"));
+			pstmt.setString(3, (String) hmap.get("naver"));
+			pstmt.setString(4, (String) hmap.get("daum"));
+			pstmt.setString(5, (String) hmap.get("title"));
 			chk = pstmt.executeUpdate();
 			conn.commit();
 		} catch (ClassNotFoundException | SQLException e) {
@@ -164,8 +177,36 @@ public class MemDAO {
 				e.printStackTrace();
 			}
 		}
-
 		return chk;
-	} // end deleteMethod();
+	} // end updateScoreMethod()
+
+	public int updateReviewMethod(HashMap<String, Object> hmap) {
+		int chk = -1;
+		try {
+			conn = init();
+			conn.setAutoCommit(false);
+			String sql = "UPDATE movie SET review = ? WHERE title = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, (String) hmap.get("review"));
+			pstmt.setString(2, (String) hmap.get("title"));
+			chk = pstmt.executeUpdate();
+			conn.commit();
+		} catch (ClassNotFoundException | SQLException e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.setAutoCommit(true);
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return chk;
+	} // end updateReviewMethod()
 
 } // end class
